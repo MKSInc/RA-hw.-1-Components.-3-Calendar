@@ -27,7 +27,9 @@ export default function CalendarTable({ date }) {
 						<tr key={index}>
 							{
 								week.map((day, index) =>
-									<td className={`${day.isOtherMonth ? 'ui-datepicker-other-month' : ''} ${day.isCurrDate ? 'ui-datepicker-today' : ''}`}
+								/* Убрал пробел между классами, чтобы для элементов без классов не генерировался атрибут class=" ".
+								   В данном случае это можно, так как ситуация когда будут оба класса не произойдет и имена не склеятся.*/
+									<td className={`${day.isOtherMonth ? 'ui-datepicker-other-month' : ''}${day.isCurrDate ? 'ui-datepicker-today' : ''}`}
 										key={index}>
 										{day.date}
 									</td>
